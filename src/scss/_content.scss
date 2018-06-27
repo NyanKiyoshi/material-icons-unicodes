@@ -1,0 +1,32 @@
+#icons {
+  max-width: 750px;
+  margin: auto;
+
+  display: flex;
+  flex-flow: wrap;
+
+  li {
+    width: 125px;
+    text-align: center;
+    text-overflow: ellipsis;
+
+    overflow: hidden;
+    margin: 1.5rem;
+
+    span {
+      padding: 0.5rem;
+      display: block;
+
+      &:first-child {
+        color: #888;
+        font-size: .7rem;
+      }
+
+      &:last-child {
+        color: #1d1d1d;
+        font-size: 2rem;
+        font-family: 'Material Icons';
+      }
+    }
+  }
+}

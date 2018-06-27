@@ -1,0 +1,45 @@
+{
+  "name": "material-icons-unicodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/js/index.js",
+  "style": "dist/css/bootstrap-material-design.css",
+  "sass": "src/scss/main.scss",
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "glob": "^7.1.2",
+    "node-sass": "^4.5.3",
+    "node-sass-tilde-importer": "^1.0.0",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-inject": "^2.0.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "scripts": {
+    "build": "npm run build:js && npm run build:js-min && npm run build:css && npm run build:css-min",
+    "build:js": "rollup -c",
+    "build:js-min": "minify dist/js/fluffy-octo.js --out-file dist/js/fluffy-octo.min.js",
+    "watch": "concurrently --kill-others --names \"js,css\" \"npm run watch:js\" \"npm run watch:css\"",
+    "watch:js": "npm run build:js -- --watch",
+    "watch:css": "npm run build:css && npm run build:css -- --watch",
+    "watch:pug": "pug src/templates --out dist --pretty --watch",
+    "build:css": "node-sass --importer=node_modules/node-sass-tilde-importer src/scss/main.scss dist/css/style.css",
+    "build:css-min": "cssnano dist/css/fluffy-octo.css dist/css/fluffy-octo.min.css",
+    "postpublish": "GIT_DEPLOY_DIR=dist GIT_DEPLOY_BRANCH=dist ./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NyanKiyoshi/fluffy-octo-happiness-dashboard.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/NyanKiyoshi/fluffy-octo-happiness-dashboard/issues"
+  },
+  "homepage": "https://github.com/NyanKiyoshi/fluffy-octo-happiness-dashboard#readme"
+}
