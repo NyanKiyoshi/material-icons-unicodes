@@ -71,12 +71,12 @@ h1 {
   #icons li {
     width: 125px;
     text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
     margin: 1.5rem; }
     #icons li span {
       padding: 0.5rem;
-      display: block; }
+      display: block;
+      text-overflow: ellipsis;
+      overflow: hidden; }
       #icons li span:first-child {
         color: #888;
         font-size: .7rem; }

@@ -8,14 +8,14 @@
   li {
     width: 125px;
     text-align: center;
-    text-overflow: ellipsis;
-
-    overflow: hidden;
     margin: 1.5rem;
 
     span {
       padding: 0.5rem;
       display: block;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
 
       &:first-child {
         color: #888;
